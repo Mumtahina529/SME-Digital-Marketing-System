@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="নিবন্ধন করুন - SME Digital Marketing Platform">
+    <title>নিবন্ধন - SME Digital Marketing Platform</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bengali" style="background: var(--gradient-aurora); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="max-width: 500px; width: 100%;">
+        <div class="card" style="padding: 2.5rem; animation: fadeInUp 0.8s ease-out;">
+            <!-- Back to Home -->
+            <div style="margin-bottom: 1.5rem;">
+                <a href="home.php" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-600); text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                    <i class="fas fa-arrow-left"></i>হোমে ফিরে যান
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: var(--text-3xl); font-weight: 800; margin-bottom: 0.5rem; color: var(--gray-900);">নিবন্ধন করুন</h1>
+                <p style="color: var(--gray-600);">নতুন অ্যাকাউন্ট তৈরি করুন</p>
+            </div>
+            
+            <!-- User Type Selection -->
+            <div style="margin-bottom: 1.5rem;">
+                <label class="form-label">আমি হচ্ছি</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button onclick="showUserRegister()" class="btn btn-outline" id="userRegBtn" style="padding: 1rem;">
+                        <i class="fas fa-user" style="display: block; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        কাস্টমার
+                    </button>
+                    <button onclick="showProviderRegister()" class="btn btn-ghost" id="providerRegBtn" style="padding: 1rem;">
+                        <i class="fas fa-briefcase" style="display: block; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        প্রোভাইডার
+                    </button>
+                </div>
+            </div>
+            
+            <!-- User Registration Form -->
+            <form id="userRegisterForm" style="display: block;">
+                <div class="form-group">
+                    <label class="form-label">নাম</label>
+                    <input type="text" name="name" required class="form-input" placeholder="আপনার নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ইমেইল</label>
+                    <input type="email" name="email" required class="form-input" placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ফোন</label>
+                    <input type="tel" name="phone" required class="form-input" placeholder="+880 1XXX-XXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">কোম্পানির নাম (ঐচ্ছিক)</label>
+                    <input type="text" name="company_name" class="form-input" placeholder="আপনার কোম্পানির নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">পাসওয়ার্ড</label>
+                    <input type="password" name="password" required class="form-input" placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-user-plus" style="margin-right: 0.5rem;"></i>নিবন্ধন করুন
+                </button>
+            </form>
+            
+            <!-- Provider Registration Form -->
+            <form id="providerRegisterForm" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">নাম</label>
+                    <input type="text" name="name" required class="form-input" placeholder="আপনার নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ইমেইল</label>
+                    <input type="email" name="email" required class="form-input" placeholder="your@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ফোন</label>
+                    <input type="tel" name="phone" required class="form-input" placeholder="+880 1XXX-XXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">কোম্পানির নাম (ঐচ্ছিক)</label>
+                    <input type="text" name="company_name" class="form-input" placeholder="আপনার কোম্পানির নাম">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ক্যাটাগরি</label>
+                    <select name="category" required class="form-select">
+                        <option value="">নির্বাচন করুন</option>
+                        <option value="SEO">SEO</option>
+                        <option value="Facebook Ads">Facebook Ads</option>
+                        <option value="Google Ads">Google Ads</option>
+                        <option value="Graphics">Graphics</option>
+                        <option value="Web Dev">Web Dev</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">অভিজ্ঞতা (বছর)</label>
+                    <input type="number" name="experience" required min="0" class="form-input" placeholder="0">
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label class="form-label">ন্যূনতম বাজেট (৳)</label>
+                        <input type="number" name="budget_min" required min="0" class="form-input" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">সর্বোচ্চ বাজেট (৳)</label>
+                        <input type="number" name="budget_max" required min="0" class="form-input" placeholder="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">বায়ো</label>
+                    <textarea name="bio" rows="3" class="form-textarea" placeholder="আপনার সম্পর্কে কিছু লিখুন..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">পাসওয়ার্ড</label>
+                    <input type="password" name="password" required class="form-input" placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="btn btn-secondary" style="width: 100%;">
+                    <i class="fas fa-briefcase" style="margin-right: 0.5rem;"></i>নিবন্ধন করুন
+                </button>
+            </form>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <p style="color: var(--gray-600); margin: 0;">ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="login.php" style="color: var(--primary-600); font-weight: 600; text-decoration: none;">লগইন করুন</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="message" class="fixed" style="display: none; position: fixed; top: 1rem; right: 1rem; padding: 1rem 1.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); z-index: 1000; max-width: 400px;"></div>
+    
+    <script>
+        function showMessage(text, type = 'success') {
+            const msg = document.getElementById('message');
+            msg.className = `fixed ${type === 'success' ? 'bg-gradient-primary' : 'bg-gradient-secondary'} text-white`;
+            msg.style.display = 'block';
+            msg.textContent = text;
+            setTimeout(() => msg.style.display = 'none', 3000);
+        }
+        
+        function showUserRegister() {
+            document.getElementById('userRegisterForm').style.display = 'block';
+            document.getElementById('providerRegisterForm').style.display = 'none';
+            document.getElementById('userRegBtn').classList.add('btn-outline');
+            document.getElementById('userRegBtn').classList.remove('btn-ghost');
+            document.getElementById('providerRegBtn').classList.add('btn-ghost');
+            document.getElementById('providerRegBtn').classList.remove('btn-outline');
+        }
+        
+        function showProviderRegister() {
+            document.getElementById('providerRegisterForm').style.display = 'block';
+            document.getElementById('userRegisterForm').style.display = 'none';
+            document.getElementById('providerRegBtn').classList.add('btn-outline');
+            document.getElementById('providerRegBtn').classList.remove('btn-ghost');
+            document.getElementById('userRegBtn').classList.add('btn-ghost');
+            document.getElementById('userRegBtn').classList.remove('btn-outline');
+        }
+        
+        document.getElementById('userRegisterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.append('action', 'register_user');
+            
+            try {
+                const res = await fetch('api/auth.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await res.json();
+                if (data.success) {
+                    showMessage(data.message, 'success');
+                    setTimeout(() => window.location.href = data.redirect, 1000);
+                } else {
+                    showMessage(data.message, 'error');
+                }
+            } catch (error) {
+                showMessage('একটি ত্রুটি ঘটেছে', 'error');
+            }
+        });
+        
+        document.getElementById('providerRegisterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            formData.append('action', 'register_provider');
+            
+            try {
+                const res = await fetch('api/auth.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await res.json();
+                if (data.success) {
+                    showMessage(data.message, 'success');
+                    setTimeout(() => window.location.href = 'login.php', 2000);
+                } else {
+                    showMessage(data.message, 'error');
+                }
+            } catch (error) {
+                showMessage('একটি ত্রুটি ঘটেছে', 'error');
+            }
+        });
+    </script>
+</body>
+</html>
